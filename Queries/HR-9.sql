@@ -21,4 +21,14 @@ ALTER TABLE ST_HSNAKD RENAME TO AGILE_HSNAKD;
 SELECT *
 FROM AGILE_HSNAKD;
 
+ALTER TABLE AGILE_HSNAKD RENAME TO ST_HSNAKD;
+
 COMMIT ;
+
+-- truncate, if we want to delete all data from the table,
+-- but still keep the table structure we use truncate
+
+TRUNCATE TABLE ST_HSNAKD;
+
+-- if we want to delete the table and data together
+DROP TABLE ST_HSNAKD;
