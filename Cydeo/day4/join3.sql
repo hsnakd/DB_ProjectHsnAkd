@@ -16,7 +16,7 @@ on e.department_id = d.department_id
 join locations l 
 on d.location_id = l.location_id;
 
---get me firstname,lastname and deparment name, city,country_name for all employees;
+--get me firstname,lastname and department name, city,country_name for all employees;
 select first_name , last_name , department_name, city,country_name
 from employees e join departments d
 on e.department_id = d.department_id
