@@ -31,6 +31,11 @@ select *
 from employees
 where employee_id between 130 and 170;
 
+--get me all info where emp_id not from 130 to 170
+select *
+from employees
+where employee_id not between 130 and 170;
+
 --get me all info where employee_id 135 176 154 129
 select * 
 from employees
@@ -45,6 +50,18 @@ where employee_id in(135,176,154,129);
 select city,country_id
 from locations
 where country_id in('IT','US','UK');
+
+--Use the IN operator to select all the records where Country is either "Norway" or "France".
+select *
+from COUNTRIES
+where COUNTRY_NAME in ('Denmark','France');
+
+--Use the IN operator to select all the records where Country is NOT "Norway" and NOT "France".
+select *
+from COUNTRIES
+where COUNTRY_NAME not in ('Denmark','France');
+
+
 
 
 

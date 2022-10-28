@@ -24,6 +24,10 @@ from employees
 group by job_id
 having avg(salary) >5000;
 
-
+--List the number of EMPLOYEES in each salary, ordered by the salary job_id first.
+SELECT COUNT(JOB_ID), SALARY
+FROM EMPLOYEES
+GROUP BY SALARY
+ORDER BY COUNT(JOB_ID) DESC;
 
 

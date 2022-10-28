@@ -56,3 +56,9 @@ order by salary desc;
 select *
 from (select * from employees order by salary desc)
 where rownum < 11;
+
+--Use the BETWEEN operator to select all the records
+-- where the value of the ProductName column is alphabetically between 'Gerald' and 'Patrick'.
+SELECT * FROM EMPLOYEES
+WHERE FIRST_NAME  BETWEEN 'Gerald' AND 'Patrick';
+
