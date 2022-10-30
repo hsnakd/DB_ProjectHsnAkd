@@ -18,6 +18,7 @@ select first_name,last_name,salary from employees;
 SELECT street_address, postal_code 
 FROM locations;
 
-select distinct first_name from employees;
 --remove duplicates
+select distinct first_name from employees;
+
 

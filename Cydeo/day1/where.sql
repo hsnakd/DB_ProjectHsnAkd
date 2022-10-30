@@ -8,6 +8,17 @@ where first_name = 'David' and last_name = 'Lee';
 select * from employees 
 where salary > 7000;
 
+--get me all information who is making equal 7000 salary
+select * from employees
+where salary = 7000;
+
+--get me all information who is making not equal 7000 salary
+select * from employees
+where salary <> 7000;
+
+select * from employees
+where salary != 7000;
+
 --get me email of who is making less than 4000
 select email, salary from employees
 where salary < 4000;
@@ -61,9 +72,13 @@ select *
 from COUNTRIES
 where COUNTRY_NAME not in ('Denmark','France');
 
+SELECT FIRST_NAME, JOB_ID
+FROM EMPLOYEES
+WHERE JOB_ID = 'ST_CLERK';
 
-
-
+SELECT POSTAL_CODE, COUNTRY_ID
+FROM LOCATIONS
+WHERE COUNTRY_ID = 'JP' OR COUNTRY_ID = 'UK' OR COUNTRY_ID = 'CA';
 
 
 
