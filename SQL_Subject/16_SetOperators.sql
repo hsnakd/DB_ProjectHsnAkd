@@ -18,5 +18,7 @@ from employees
 group by first_name
 having count(*) >1;
 
-
+SELECT EMPLOYEE_ID, FIRST_NAME, LAST_NAME, SALARY
+FROM EMPLOYEES
+WHERE ROWNUM < 6;
 

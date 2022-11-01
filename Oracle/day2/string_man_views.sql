@@ -1,4 +1,4 @@
-C--how can we rename the column that we displayed
+--how can we rename the column that we displayed
 select first_name as "given_name", last_name as "surname"
 from employees;
 
@@ -43,10 +43,20 @@ first_name||' '||last_name as "full_name",lower(email||'@gmail.com') as "full_em
 from employees;
 
 select "full_name"
-from Emaillist;
+from Emaillist_jamal;
 
 --to remove view
 drop view Emaillist_jamal;
 
+SELECT JOB_TITLE, LENGTH(JOB_TITLE)
+FROM JOBS;
+
+SELECT UPPER(CITY) , LOWER(STREET_ADDRESS)
+FROM LOCATIONS;
+
+SELECT EMPLOYEE_ID || SUBSTR(FIRST_NAME,0,2)  || SUBSTR(JOB_ID,0,2) || DEPARTMENT_ID AS PERSONAL_ID
+FROM EMPLOYEES;
 
 
+SELECT CONCAT(CONCAT(CONCAT(EMPLOYEE_ID, SUBSTR(FIRST_NAME,0,2)),SUBSTR(JOB_ID,0,2)),DEPARTMENT_ID) AS PERSONAL_ID
+FROM EMPLOYEES;
