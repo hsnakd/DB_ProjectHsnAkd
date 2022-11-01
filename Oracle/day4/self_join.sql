@@ -8,4 +8,4 @@ from employees e1 left join employees e2
 on e1.manager_id = e2.employee_id
 order by e1.employee_id;
 
---BREAK UNTIL 12:15
+
