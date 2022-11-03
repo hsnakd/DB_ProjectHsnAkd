@@ -22,24 +22,47 @@ FROM EMPLOYEES
 WHERE DEPARTMENT_ID IN (90, 60, 100, 130, 120);
 
 -- 5. Show all employees who does not work in any one of these department id 90, 60,  100, 130, 120
-
+SELECT *
+FROM EMPLOYEES
+WHERE DEPARTMENT_ID NOT IN (90, 60, 100, 130, 120);
 
 -- 6. divide employees into groups by using their job id
+SELECT JOB_ID
+FROM EMPLOYEES
+GROUP BY JOB_ID;
 
 --  6.1 display the maximum salaries in each groups
---  6.2 display the miniMum salaries in each groups
+SELECT JOB_ID, MAX(SALARY)
+FROM EMPLOYEES
+GROUP BY JOB_ID;
+
+--  6.2 display the minimum salaries in each groups
+SELECT JOB_ID, MIN(SALARY)
+FROM EMPLOYEES
+GROUP BY JOB_ID;
+
 --  6.3 display the average salary of each group
---  6.4 how many employees are there in each group that have minimum salary of 5000 ?
---  6.5 display the total budgets of each groups
+SELECT JOB_ID, AVG(SALARY)
+FROM EMPLOYEES
+GROUP BY JOB_ID;
 
+-- 6.4 how many employees are there in each group that have minimum salary of 5000?
+SELECT JOB_ID, COUNT(*)
+FROM EMPLOYEES
+WHERE SALARY >= 5000
+GROUP BY JOB_ID;
 
+-- 6.5 display the total budgets of each groups
+SELECT JOB_ID, SUM(SALARY)
+FROM EMPLOYEES
+GROUP BY JOB_ID;
 
 --  7. display employees' full email addresses and full names
-
 -- (assume that the domain of the email is @gmail)
-
-
+SELECT FIRST_NAME || ' ' || LAST_NAME AS FULL_NAME, LOWER(EMAIL || '@gmail.com') AS EMAIL_ADDRESS
+FROM EMPLOYEES;
 
 -- 8. display full addresses from locations table in a single column
-
--- (full address: Street_Address,  CityName  ZipCode,  Country_id)
+-- (full address: STREET_ADDRESS,  CITY  POSTAL_CODE,  COUNTRY_ID)
+SELECT STREET_ADDRESS || ' ' || CITY || ' ' || POSTAL_CODE || ' ' || COUNTRY_ID AS FULL_ADDRESS
+FROM LOCATIONS;
