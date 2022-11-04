@@ -33,6 +33,9 @@ FROM COUNTRIES C INNER JOIN REGIONS R
 ON C.REGION_ID = R.REGION_ID;
 
 --  7. Display All cities, country names from hr database
+select *
+from LOCATIONS;
+
 SELECT L.CITY, C.COUNTRY_NAME
 FROM COUNTRIES C INNER JOIN LOCATIONS L
 ON C.COUNTRY_ID = L.COUNTRY_ID;
@@ -47,11 +50,12 @@ WHERE D.DEPARTMENT_ID IN (80,40);
 --  9. Display employees' first name, Lastname department id and
 --  all departments including those where do not have any employee.
 SELECT E.FIRST_NAME, E.LAST_NAME, E.DEPARTMENT_ID, D.DEPARTMENT_NAME
-FROM EMPLOYEES E RIGHT OUTER JOIN DEPARTMENTS D
-ON E.DEPARTMENT_ID = D.DEPARTMENT_ID;
+FROM DEPARTMENTS D LEFT OUTER JOIN EMPLOYEES E
+ON D.DEPARTMENT_ID = E.DEPARTMENT_ID;
 
 select e.first_name, e.last_name, e.department_id, d.department_name
-from departments d left outer join employees e on d.department_id=e.department_id;
+from departments d left outer join employees e
+    on d.department_id=e.department_id;
 
 -- 10. Display the first name, last name, department number, and department name,
 -- for all employees who have or have not any department

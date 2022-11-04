@@ -9,7 +9,7 @@ from employees
 where salary = 24000;
 
 
---subquery solution in one shot 
+--sub-query solution in one shot
 select *
 from employees
 where salary = (select max(salary) from employees);
