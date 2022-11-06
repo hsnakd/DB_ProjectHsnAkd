@@ -69,11 +69,12 @@ join countries C
 on c.country_id = l.country_id;
 
 
-
+-- get me first name and department name in same table
 SELECT FIRST_NAME, DEPARTMENT_NAME
 FROM EMPLOYEES E JOIN DEPARTMENTS D
 ON E.DEPARTMENT_ID = D.DEPARTMENT_ID;
 
+--get me job id and manager id in one table
 SELECT J.JOB_ID, E.MANAGER_ID
 FROM JOBS J JOIN EMPLOYEES E
 ON J.JOB_ID = E.JOB_ID;
