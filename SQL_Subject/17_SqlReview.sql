@@ -172,10 +172,10 @@ select max(SALARY) from EMPLOYEES;
 
 select max(SALARY) from EMPLOYEES
 where SALARY != (select max(SALARY) from EMPLOYEES);
-
-select SALARY from (select distinct SALARY from EMPLOYEES
-order by SALARY desc)
-where ROWNUM < 15;
+--find the highest 14th salary(removing duplicate values)
+select min(salary)
+from (select distinct salary from employees order by salary desc)
+where rownum <15;
 
 select SALARY from EMPLOYEES
 order by SALARY desc ;
