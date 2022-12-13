@@ -12,7 +12,6 @@ group by job_id;
 --get me job_ids where their just personal salary is more than 5k
 select job_id,avg(salary), count(*), sum(salary)
 from employees
-where salary >5000
 group by job_id;
 
 --get me job_ids where their avg salary is more than 5k
